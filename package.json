@@ -18,7 +18,8 @@
     "minimatch": "^3.0.3",
     "selector-kit": "^0.1",
     "stable": "^0.1.5",
-    "underscore-plus": "^1.6.6"
+    "underscore-plus": "^1.6.6",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "atom-jasmine3-test-runner": "^5.1.8",
@@ -256,5 +257,10 @@
       "**/spec/fixtures/**"
     ]
   },
-  "atomTestRunner": "./spec/custom-runner"
+  "atomTestRunner": "./spec/custom-runner",
+  "scripts": {
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
+  },
+  "snyk": true
 }
